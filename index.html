@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Portfolio - Shhivam Sanjivan Salunke">
+    <meta name="author" content="Shhivam Salunke">
+    <title>Portfolio - Shhivam Salunke</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Meyawo main styles -->
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+
+    <!-- All CSS Styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .header-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            white-space: nowrap;
+        }
+        .header-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .about {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+        .about-img-holder {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .about-caption {
+            flex: 2;
+            max-width: 800px;
+            text-align: justify;
+        }
+        .btn-rounded {
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-rounded:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .bold-dark-text {
+            font-weight: bold;
+            color: #000000;
+        }
+        .plain-black {
+            color: #000000;
+            font-weight: normal;
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .header-title { font-size: 2.5rem; }
+            .header-subtitle { font-size: 1.5rem; }
+        }
+        @media (min-width: 1024px) {
+            .header-title { font-size: 3rem; }
+        }
+        @media (min-width: 1440px) {
+            .header-title { font-size: 3.5rem; }
+        }
+        @media (min-width: 1920px) {
+            .header-title { font-size: 4rem; }
+        }
+        @media (min-width: 2560px) {
+            .header-title { font-size: 4.5rem; }
+        }
+
+        /* Instagram Section */
+        .instagram-section { 
+            width: 90%; 
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to bottom, #f9f9f8, rgba(213, 160, 160, 0));
+        }
+        .instagram-container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            overflow: hidden;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-name {
+            font-size: 28px;
+            margin: 0;
+            color: #000;
+        }
+        .bio {
+            font-size: 18px;
+            color: #000;
+            margin: 5px 0;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f4ecec;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #e6e6e6;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .image-placeholder {
+            width: 100%;
+            padding-bottom: 100%;
+            background-color: #b3daff;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .image-placeholder img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .image-placeholder:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Education Section */
+        .education-card {
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .education-card .row {
+            align-items: center;
+        }
+        .education-card h6 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .education-card p {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .education-card p em {
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-subtitle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0056b3;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+        .skill-box {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            padding: 15px 25px;
+            border-radius: 25px;
+            color: #333;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .skill-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-color: #e0e0e0;
+        }
+
+        /* Work Experience Section */
+        .work-experience-card {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .work-experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .work-experience-card h4 {
+            font-size: 1.5rem;
+            color: #6a5acd;
+            margin-bottom: 10px;
+        }
+        .job-description {
+            font-size: 1rem;
+            color: #333;
+            text-align: left;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+        .job-description strong {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Certification Section */
+        .certification-section {
+            background: #ffffff;
+            padding: 40px 20px;
+        }
+        .certification-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .certification-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .certificates {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .certificate {
+            flex: 1;
+            text-align: center;
+        }
+        .certificate-box {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .certificate-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .certificate-name {
+            margin-top: 10px;
+            font-size: 1em;
+        }
+        .certificate-name a {
+            color: #0f0f0f;
+            text-decoration: none;
+        }
+        .certificate-name a:hover {
+            text-decoration: underline;
+        }
+
+        /* Projects Section */
+        .scrolling-wrapper {
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrolling-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        .project-card {
+            flex: 0 0 calc(33.333% - 20px);
+            scroll-snap-align: start;
+            border-radius: 10px;
+            margin-right: 20px;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .project-card::before {
+            content: "";
+            display: block;
+            height: 410px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: inherit;
+            border-radius: 10px 10px 0 0;
+        }
+        .project-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            color: black;
+            padding: 15px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            height: 90px;
+        }
+        .project-title {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .scroll-indicators {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            padding-right: 40px;
+        }
+        .scroll-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        .scroll-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            max-width: 900px;
+            border-radius: 10px;
+            height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .modal.show {
+            display: block;
+        }
+        .modal.show .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .image-slider {
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            margin-top: 20px;
+            height: 60vh;
+        }
+        .image-slider img {
+            flex: 0 0 auto;
+            max-width: 100%;
+            height: auto;
+            scroll-snap-align: start;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        /* Leadership Section */
+        .experience-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        .email-button {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .email-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* General */
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-right p { text-align: right; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 20px; }
+        .row { display: flex; flex-wrap: wrap; }
+        .col-md-8 { width: 66.66%; padding: 10px; }
+        .col-md-4 { width: 33.33%; padding: 10px; }
+        .col-md-12 { width: 100%; }
+        .section-title { font-size: 24px; margin-bottom: 40px; }
+        .section-subtitle { font-size: 1.2em; color: #666; margin-bottom: 40px; }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#">Portfolio</a>         
+            <ul class="nav">
+                <li class="item"><a class="link" href="#home">Home</a></li>
+                <li class="item"><a class="link" href="#about">About</a></li>
+                <li class="item"><a class="link" href="#education">Education</a></li>
+                <li class="item"><a class="link" href="#skills">Skills</a></li>
+                <li class="item"><a class="link" href="#portfolio">Work Experience</a></li>
+                <li class="item"><a class="link" href="#proof-of-work">Proof of Work</a></li>
+                <li class="item"><a class="link" href="#certifications">Certifications</a></li>
+                <li class="item"><a class="link" href="#projects">Projects</a></li>
+                <li class="item"><a class="link" href="#leadership-volunteering">Leadership Experience</a></li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </a>
+        </div>          
+    </nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header" style="background: linear-gradient(to bottom, #75c6eb, #a0c7ee 80%);">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am Shhivam Sanjivan Salunke!</span>
+            </h1>
+            <p class="header-subtitle"> </p>
+            <p class="header-subtitle plain-black">Operations Project Manager</p> 
+            <p class="header-subtitle plain-black">Supply Chain & Logistics Specialist</p>    
+            <p class="header-subtitle plain-black">Lean Six Sigma Black Belt | CAPM Certified</p>    
+            <p class="header-subtitle"> </p> 
+            <p class="header-subtitle"> </p> 
+            <p class="header-subtitle" style="margin-bottom: 40px;"></p>
+            <p class="header-subtitle bold-dark-text">Operations Project Manager @ North Bay Distribution, Inc. (3PL)</p>
+        </div>              
+    </header><!-- end of page header -->
+
+    <!-- About Section -->
+    <section class="section pt-0" id="about">
+        <div class="container">
+            <div class="about">
+                <div class="about-img-holder">
+                    <img src="assets/imgs/1234.jpeg" class="about-img" alt="Profile Image">
+                </div>
+                <div class="about-caption">
+                    <h2 class="section-title mb-3">About Me</h2>
+                    <p class="about-text">
+                        Analytical Project Manager and Operations Specialist with experience in supply chain and manufacturing. Proven record of turning inefficiencies into measurable results across logistics, procurement, inventory, and demand planning. Calm, detail-oriented, steady leader; elevates warehouse performance and ensures accurate, on-time fulfillment.
+                    </p>
+                    <p class="about-text">
+                        In my current role as Operations Project Manager at North Bay Distribution Inc, I lead cross-functional projects and manage the full lifecycle of new client integrations from contract signing to go-live. I have spearheaded the implementation of a $200K+ Locus Robotics system, led 5S rollouts across warehouses, and developed detailed project plans with milestones, RACI matrices, and risk registers in Jira. My hands-on experience includes managing logistics and operational planning for 30+ client accounts, achieving 100% on-time go-live rates, and improving on-time delivery rates from 94% to 99%.
+                    </p>
+                    <p class="about-text">
+                        With a Master's degree in Engineering Management from the University of Southern California and a Bachelor's degree in Mechanical Engineering from the University of Mumbai, I bring a robust technical background and a passion for problem-solving to every project I undertake. I am certified as a Lean Six Sigma Black Belt (LSSBB) and a Certified Associate in Project Management (CAPM) by PMI. My goal is to continue growing in the fields of Operations, Supply Chain Management, and Project Management, contributing to innovative solutions and impactful improvements in organizational performance.
+                    </p>
+                    <a href="assets/js/Shhivam Sn.pdf" target="_blank" class="btn-rounded btn btn-outline-primary mt-4">
+                        View Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <div class="instagram-section">
+        <div class="instagram-container">
+            <div class="profile-header">
+                <div class="profile-pic">
+                    <img src="assets/imgs/My Profile.jpg" alt="Profile Image">
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">Shhivam Sanjivan Salunke</h1>
+                    <p class="bio">Living in the magic of life.</p>
+                    <a href="mailto:shhivamsn@gmail.com" class="contact-button">Contact Me</a>
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="image-placeholder"><img src="assets/imgs/image 1.JPG" alt="Instagram Image 1"></div>
+                <div class="image-placeholder"><img src="assets/imgs/Image 211.jpg" alt="Instagram Image 2"></div>
+                <div class="image-placeholder"><img src="assets/imgs/Image33.jpg" alt="Instagram Image 3"></div>
+                <div class="image-placeholder"><img src="assets/imgs/4.JPG" alt="Instagram Image 4"></div>
+                <div class="image-placeholder"><img src="assets/imgs/Image 5.jpg" alt="Instagram Image 5"></div>
+                <div class="image-placeholder"><img src="assets/imgs/7.JPG" alt="Instagram Image 6"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <h6 class="section-title mb-6 text-center">Education</h6>
+            <div class="education-card">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6><strong>University of Southern California</strong></h6>
+                        <p><em><strong>Master of Science in Engineering Management</strong></em></p>
+                        <p>Coursework: Engineering Project Management, Enterprise Wide Information Systems, Leading and Managing Engineering Teams, Engineering Management Decisions & Statistics, Economic Analysis of Engineering Projects</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p>Los Angeles, CA</p>
+                        <p>August 2023 - May 2025</p>
+                        <p><em>GPA: 3.73/4.00</em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="education-card">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6><strong>University of Mumbai</strong></h6>
+                        <p><em><strong>Bachelor of Engineering in Mechanical Engineering</strong></em></p>
+                        <p>Coursework: Logistics and Supply Chain Management, Project Management, Optimization Techniques, CAD-CAM, Production Planning, Solid Mechanics, Theory of Machines, Dynamics of Machinery, Kinematics of Machinery, Turbo Machinery, Internal Combustion Engine, Product Design and Development</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p>Mumbai, India</p>
+                        <p>June 2019 - July 2023</p>
+                        <p><em>GPA: 3.75/4.00</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container text-center">
+            <h6 class="section-title mb-6">Skills</h6>
+            
+            <h6 class="skills-subtitle">Technical and Management Skills</h6>
+            <div class="skills-container">
+                <span class="skill-box">MS Office</span>
+                <span class="skill-box">MS Project</span>
+                <span class="skill-box">Power BI</span>
+                <span class="skill-box">SQL</span>
+                <span class="skill-box">Tableau</span>
+                <span class="skill-box">NetSuite</span>
+                <span class="skill-box">Jira</span>
+                <span class="skill-box">Python</span>
+                <span class="skill-box">SAP S/4HANA MM</span>
+                <span class="skill-box">WMS</span>
+                <span class="skill-box">ERP</span>
+                <span class="skill-box">MRP</span>
+                <span class="skill-box">Traditional Project Management</span>
+                <span class="skill-box">Agile Methodologies</span>
+                <span class="skill-box">Contingency Planning</span>
+                <span class="skill-box">Negotiation</span>
+                <span class="skill-box">Risk Management</span>
+                <span class="skill-box">Inventory Planning</span>
+                <span class="skill-box">Forecasting</span>
+                <span class="skill-box">Supply Chain Management</span>
+                <span class="skill-box">Procurement & Logistics Coordination</span>
+                <span class="skill-box">Cost Reduction Strategies</span>
+                <span class="skill-box">Warehouse Operations</span>
+                <span class="skill-box">Team Leadership</span>
+                <span class="skill-box">Process Improvement</span>
+                <span class="skill-box">Vendor Management</span>
+            </div>
+    
+            <h6 class="skills-subtitle">Certifications</h6>
+            <div class="skills-container">
+                <span class="skill-box">Lean Six Sigma Black Belt (LSSBB), CSSC</span>
+                <span class="skill-box">Certified Associate in Project Management (CAPM), PMI</span>
+            </div>
+    
+            <h6 class="skills-subtitle">Interpersonal Skills</h6>
+            <div class="skills-container">
+                <span class="skill-box">Critical Thinking</span>
+                <span class="skill-box">Problem Solving</span>
+                <span class="skill-box">Leadership</span>
+                <span class="skill-box">Negotiation</span>
+                <span class="skill-box">Planning</span>
+                <span class="skill-box">Scheduling</span>
+                <span class="skill-box">Teamwork</span>
+                <span class="skill-box">Communication</span>
+                <span class="skill-box">Adaptability</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="section" id="portfolio">
+        <div class="container text-center">
+            <p class="section-subtitle">What I Did?</p>
+            <h6 class="section-title mb-6">Work Experience</h6>
+            <div class="row">
+                <!-- Job 1 -->
+                <div class="col-md-12 work-experience-card">
+                    <h4><strong>North Bay Distribution, Inc. (3rd Party Logistics)</strong></h4>
+                    <p><strong>Role:</strong> Operations Project Manager</p>
+                    <p><strong>Duration:</strong> May 2025 - Present</p>
+                    <p><strong>Location:</strong> San Francisco, CA</p>
+                    <br>
+                    <p class="job-description"><strong>• Cross-Functional Project Leadership:</strong> Lead cross-functional projects and manage the full lifecycle of new client integrations from contract signing to go-live, resulting in seamless execution and on-time delivery by driving clear timelines, ownership, and risk controls.</p>
+                    <p class="job-description"><strong>• Project Planning & Execution:</strong> Develop detailed project plans with milestones, RACI matrices, and risk registers in Jira for 2 client onboarding projects, coordinating cross-functionally with Finance, IT, and Operations to achieve 100% on-time go-live rate.</p>
+                    <p class="job-description"><strong>• Logistics & Operational Planning:</strong> Manage logistics and operational planning for 30+ client accounts, facilitating weekly capacity planning meetings with Operations Managers to balance labor allocation against forecasted volume, improving on-time delivery rate from 94% to 99%.</p>
+                    <p class="job-description"><strong>• 5S Implementation:</strong> Lead a 5S (Sort, Set in Order, Shine, Standardize, Sustain) rollout across a warehouse serving 5+ client accounts, run audits and train associates, and drive a culture change resulting in increase in 5S score by 12% in two weeks.</p>
+                    <p class="job-description"><strong>• Robotics Implementation:</strong> Spearhead implementation of a $200K+ Locus Robotics system, managing testing, deployment, and training for 20+ warehouse associates, automating 2,500+ daily picks with 85% adoption in 2 weeks.</p>
+                    <p class="job-description"><strong>• Data Analytics & Labor Planning:</strong> Analyze receiving, shipping, picking, cycle count, and replenishment data with Excel PivotTables and RStudio to enable real-time visibility and data-driven labor planning across accounts, cutting down indirect hours 8% in 8 weeks.</p>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="col-md-12 work-experience-card">
+                    <h4><strong>North Bay Distribution, Inc. (3rd Party Logistics)</strong></h4>
+                    <p><strong>Role:</strong> Industrial Engineering Intern</p>
+                    <p><strong>Duration:</strong> May 2024 - August 2024</p>
+                    <p><strong>Location:</strong> San Francisco, CA</p>
+                    <br>
+                    <p class="job-description"><strong>• Inventory Reorganization:</strong> Improved order fulfillment speed 10% by leading an ABC based inventory reorganization, re-slotting 500+ SKUs across multiple clients and streamlining operational workflows.</p>
+                    <p class="job-description"><strong>• Process Improvement:</strong> Conducted time and motion studies across two facilities, identifying bottlenecks and improving workflows, which resulted in a 20% reduction in non-value-added tasks, and drafted SOPs to standardize the updated processes.</p>
+                    <p class="job-description"><strong>• DMAIC Project:</strong> Executed a DMAIC project to resolve picker-forklift aisle congestion, designing a zone-based replenishment and order batching system that enabled simultaneous picking and replenishment, increasing UPH by 10% during replenishment hours.</p>
+                    <p class="job-description"><strong>• Labor Analytics:</strong> Monitored labor activities using TZA Protrack and delivered weekly/monthly performance reports to stakeholders, driving over $7.5K in labor savings through data-backed scheduling adjustments over a duration of 12 weeks.</p>
+                    <p class="job-description"><strong>• Shipping Data Analysis:</strong> Analyzed UPS and FedEx shipping data for 30+ accounts using Excel and RStudio to calculate markups and identify cost inefficiencies in outbound logistics.</p>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="col-md-12 work-experience-card">
+                    <h4><strong>USC Auxiliary Services, Bookstore Distribution Centre</strong></h4>
+                    <p><strong>Role:</strong> Supply Chain Management Intern</p>
+                    <p><strong>Duration:</strong> August 2023 - March 2024</p>
+                    <p><strong>Location:</strong> Los Angeles, CA</p>
+                    <br>
+                    <p class="job-description"><strong>• New Product Introduction:</strong> Coordinated cross-functional execution of supply chain activities for New Product Introduction (NPI), achieving 95% accuracy in pre-launch inventory availability by aligning merchandising, sales, and operations workflows.</p>
+                    <p class="job-description"><strong>• Demand Forecasting:</strong> Improved demand forecast accuracy by 15% through analysis of historical trends and seasonality using Excel and Power BI, helping reduce stockouts for high-demand SKUs during peak season.</p>
+                    <p class="job-description"><strong>• Supplier Evaluation:</strong> Evaluated 50+ supplier proposals and supported commodity alignment efforts to enhance sourcing strategy, streamline procurement processes, and improve vendor decision-making.</p>
+                    <p class="job-description"><strong>• Purchase Order Management:</strong> Assisted in purchase order creation and validation for 3 core suppliers, ensuring consistency in pricing, lead times, and delivery schedules for critical inventory.</p>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="col-md-12 work-experience-card">
+                    <h4><strong>Maruti Seals Pvt. Ltd (Mechanical Seals Manufacturers)</strong></h4>
+                    <p><strong>Role:</strong> Operations Engineering Intern (Procurement)</p>
+                    <p><strong>Duration:</strong> December 2022 - May 2023</p>
+                    <p><strong>Location:</strong> Nashik, MH, India</p>
+                    <br>
+                    <p class="job-description"><strong>• P2P Cycle Execution:</strong> Executed the full P2P cycle in SAP S/4HANA, from validating Purchase Requisition (PR) to Purchase Order (PO) issuance, Goods Receipt (GR), and Invoice Verification (MIRO), ensuring seamless procurement process.</p>
+                    <p class="job-description"><strong>• Supply & Demand Planning:</strong> Partnered with supply and demand planning teams to align procurement schedules with forecasted needs, optimizing inventory levels and cutting excess stock costs by $3K+ while maintaining safety stock requirements.</p>
+                    <p class="job-description"><strong>• Multi-Vendor Sourcing:</strong> Designed and executed a multi-vendor sourcing strategy, reducing single-supplier dependency by 40% and lowering procurement spend by 10%, while monitoring vendor KPIs such as on-time delivery and quality.</p>
+                    <p class="job-description"><strong>• Supplier Scorecards:</strong> Built supplier performance scorecards tracking on-time delivery, defect rates, and lead time variance for 5 vendors representing 50% of spend, supporting sourcing decisions and vendor negotiations.</p>
+                    <p class="job-description"><strong>• RFQ Management:</strong> Managed complete RFQ cycles, vendor communications, and contract/pricing negotiations, driving a 15% reduction in order cycle times and improving restocking efficiency across multiple material categories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof of Work Section -->
+    <section class="section" id="proof-of-work">
+        <div class="container text-center">
+            <p class="section-subtitle">Evidence of Impact</p>
+            <h6 class="section-title mb-6">Proof of Work</h6>
+            <div class="row">
+                <div class="col-md-12 work-experience-card">
+                    <h4><strong>Work Experience Presentation</strong></h4>
+                    <p><strong>A comprehensive overview of my professional achievements and project outcomes</strong></p>
+                    <br>
+                    <div class="certificate-box" style="width:100%; height:600px; overflow:hidden; border-radius:10px;">
+                        <iframe src="https://drive.google.com/file/d/1gmNmrZJjd2IuX4oiHRui0YxpAcv4TJSu/preview" style="width:100%; height:100%; border:none;" allow="autoplay"></iframe>
+                    </div>
+                    <br>
+                    <a href="https://drive.google.com/file/d/1gmNmrZJjd2IuX4oiHRui0YxpAcv4TJSu/view" target="_blank" class="btn-rounded btn btn-outline-primary mt-4">Open in New Tab</a>
+                    <a href="assets/js/Experience.pdf" download class="btn-rounded btn btn-outline-primary mt-4" style="margin-left:10px;">Download PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="certification-section" id="certifications">
+        <div class="container text-center certification-content">
+            <h2 class="certification-title">Certifications</h2>
+            <h6 class="section-subtitle mb-4">Click To View</h6>
+
+            <div class="certificates">
+                <div class="certificate">
+                    <a href="assets/js/PMI Certfication.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/PMI Certfication.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/PMI Certfication.pdf" target="_blank">Certified Associate Project Management Certificate (CAPM)</a></p>
+                </div>
+                <div class="certificate">
+                    <a href="assets/js/Official_Certification_Issued_Lean_Six_Sigma_Black_Belt_Certification_Standard.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/Official_Certification_Issued_Lean_Six_Sigma_Black_Belt_Certification_Standard.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/Official_Certification_Issued_Lean_Six_Sigma_Black_Belt_Certification_Standard.pdf" target="_blank">Lean Six Sigma Black Belt (LSSBB)</a></p>
+                </div>
+                <div class="certificate">
+                    <a href="assets/js/Official_Certification_Issued_Lean_Six_Sigma_Green_Belt_Certification_Standard.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/Official_Certification_Issued_Lean_Six_Sigma_Green_Belt_Certification_Standard.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/Official_Certification_Issued_Lean_Six_Sigma_Green_Belt_Certification_Standard.pdf" target="_blank">Lean Six Sigma Green Belt (LSSGB)</a></p>
+                </div>
+            </div>
+
+            <div class="certificates">
+                <div class="certificate">
+                    <a href="assets/js/Six sigma.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/Six sigma.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/Six sigma.pdf" target="_blank">Six Sigma Green Belt Specialization</a></p>
+                </div>
+                <div class="certificate">
+                    <a href="assets/js/warehouse.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/warehouse.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/warehouse.pdf" target="_blank">CSCMP Supply Chain Foundations: Warehousing Operations Professional Certificate</a></p>
+                </div>
+                <div class="certificate">
+                    <a href="assets/js/Excel.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/Excel.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/Excel.pdf" target="_blank">Excel Skills for Business Specialization</a></p>
+                </div>
+            </div>
+
+            <div class="certificates">
+                <div class="certificate">
+                    <a href="assets/js/Mech 1.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/Mech 1.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/Mech 1.pdf" target="_blank">Modeling and Design for Mechanical Engineers with Autodesk Fusion 360</a></p>
+                </div>
+                <div class="certificate">
+                    <a href="assets/js/Mech 2.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/Mech 2.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/Mech 2.pdf" target="_blank">Introduction to Modeling and Design for Mechanical Engineers with Autodesk Fusion 360</a></p>
+                </div>
+                <div class="certificate">
+                    <a href="assets/js/Mech 3.pdf" target="_blank">
+                        <div class="certificate-box">
+                            <iframe src="assets/js/Mech 3.pdf" style="width:100%; height:200px; pointer-events:none; border:none;"></iframe>
+                        </div>
+                    </a>
+                    <p class="certificate-name"><a href="assets/js/Mech 3.pdf" target="_blank">Applications in Engineering Mechanics</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container text-center">
+            <p class="section-subtitle">My Work</p>
+            <h6 class="section-title mb-6">Projects</h6>
+            <p class="section-subtitle">Click To View</p>
+            
+            <div class="scrolling-wrapper">
+                <div class="project-card" data-project="project1" style="background-image: url('assets/imgs/Timbuk.png');">
+                    <div class="project-footer">
+                        <h6 class="project-title">Lean Six Sigma: Timbuk2 Operations Improvement</h6>
+                    </div>
+                </div>
+                <div class="project-card" data-project="project2" style="background-image: url('assets/imgs/UPS.png');">
+                    <div class="project-footer">
+                        <h6 class="project-title">Data Analytics: UPS and FedEx Shipping Data Analysis using R and Excel</h6>
+                    </div>
+                </div>
+                <div class="project-card" data-project="project3" style="background-image: url('assets/imgs/Leg.png');">
+                    <div class="project-footer">
+                        <h6 class="project-title">Project Management: 3D Printed Prosthetic Leg</h6>
+                    </div>
+                </div>
+                <div class="project-card" data-project="project4" style="background-image: url('assets/imgs/Under water.png');">
+                    <div class="project-footer">
+                        <h6 class="project-title">Technical: Underwater Drone for Cargo Transportation.</h6>
+                    </div>
+                </div>
+                <div class="project-card" data-project="project5" style="background-image: url('assets/imgs/Toothpaste 2.png');">
+                    <div class="project-footer">
+                        <h6 class="project-title">Technical: Toothpaste Refiller Mechanism</h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicators">
+                <div class="scroll-arrow scroll-left"><span>&lt;</span></div>
+                <div class="scroll-arrow scroll-right"><span>&gt;</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Leadership Section -->
+    <section class="section" id="leadership-volunteering">
+        <div class="container">
+            <h6 class="section-title mb-6 text-center">Leadership and Volunteering Experience</h6>
+
+            <div class="experience-card">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6><strong>Council of Vibration Specialists</strong></h6>
+                        <p><strong><em>Treasurer</em></strong></p>
+                        <p>Responsibilities: Navigated complex budgets and financial matters. Played a pivotal role in organizing key events such as the Inauguration ceremony for the first CVS student chapter and the successful coordination of the INVEST 23 International Conference on Vibration Engineering, Science & Technology.</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p>Mumbai, Maharashtra, India</p>
+                        <p>Jan 2022 - Jun 2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6><strong>Fr. Conceicao Rodrigues Institute of Technology</strong></h6>
+                        <p><strong><em>Placement Coordinator</em></strong></p>
+                        <p>Responsibilities: Actively contributed to the successful execution of placement activities on the college campus. Took charge of interview scheduling, skillfully coordinating with candidates and hiring teams, thereby ensuring the smooth and efficient orchestration of interview logistics.</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p>Mumbai, Maharashtra, India</p>
+                        <p>Jan 2022 - Jun 2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6><strong>National Service Scheme</strong></h6>
+                        <p><strong><em>Volunteer</em></strong></p>
+                        <p>Responsibilities: Collaborated with a team of 40 people & conducted various social service activities such as Blood donation camps, Education for all, Waste management, AIDS Awareness campaigns, Health checkup camps, etc.</p>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <p>Social Services</p>
+                        <p>Mar 2021 - Apr 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section-sm" style="background: linear-gradient(to bottom, #4CA1AF, transparent);">
+        <div class="container text-center text-sm-left">
+            <div class="row align-items-center">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                    <h6 class="title" style="color: #000000;">Always feel Free to Contact me</h6>
+                    <p class="m-0" style="color: #000000;"> +1 (323) 834-4522</p>
+                </div>
+                <div class="col-sm offset-sm-2 offset-md-3">
+                    <a href="mailto:shhivamsn@gmail.com">
+                        <button class="btn btn-lg my-font rounded email-button" style="background-color: #FFFFFF; color: #000000;">
+                            Email: shhivamsn@gmail.com
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="container">
+        <footer class="footer d-flex justify-content-center">       
+            <a href="https://www.linkedin.com/in/shhivam-sanjivan-salunke" target="_blank" class="link"><i class="ti-linkedin" style="font-size: 2rem;"></i></a>
+        </footer>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <script src="assets/js/meyawo.js"></script>
+
+    <!-- Navbar Toggle -->
+    <script>
+        $(document).ready(function() {
+            $('#nav-toggle').click(function() {
+                $(this).toggleClass('is-active');
+                $('ul.nav').toggleClass('show');
+            });
+        });
+    </script>
+
+    <!-- Project Scroll & Modal -->
+    <script>
+        const scrollWrapper = document.querySelector('.scrolling-wrapper');
+        const leftArrow = document.querySelector('.scroll-left');
+        const rightArrow = document.querySelector('.scroll-right');
+
+        leftArrow.addEventListener('click', () => {
+            scrollWrapper.scrollBy({ left: -scrollWrapper.clientWidth, behavior: 'smooth' });
+        });
+
+        rightArrow.addEventListener('click', () => {
+            scrollWrapper.scrollBy({ left: scrollWrapper.clientWidth, behavior: 'smooth' });
+        });
+
+        const modal = document.getElementById("projectModal");
+        const modalBody = document.getElementById("modal-body");
+        const closeModal = document.querySelector(".modal .close");
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const project = card.dataset.project;
+                let projectDetails = '';
+
+                if (project === 'project1') {
+                    projectDetails = `
+                        <h6>Lean Six Sigma: Timbuk2 Operations Improvement</h6>
+                        <p><strong>About the Project:</strong> This project was aimed at enhancing the operational efficiency of Timbuk2 by applying Lean Six Sigma methodologies. Over a one-month period, I conducted weekly operations reviews to identify key areas for improvement. After documenting a detailed change report, I submitted it for approval. Upon receiving approval, I implemented the proposed changes and monitored their impact for another month.</p>
+                        <ul>
+                            <li><strong>Reduced Processing Time by 30%:</strong> Restructured the return workstation to enable on-site inspection and processing.</li>
+                            <li><strong>Streamlined Wholesale Order Processing by 50%:</strong> Implemented simultaneous pick and pack using a scan gun.</li>
+                            <li><strong>Developed a Comprehensive Excel Template:</strong> Created an Excel template to log issues, assign resolutions and ownership, set priority levels, and track progress status.</li>
+                        </ul>
+                        <div class="image-slider">
+                            <img src="assets/imgs/Timbuk image 1.jpg" alt="Image 1">
+                            <img src="assets/imgs/timbuk image 3.jpg" alt="Image 2">
+                            <img src="assets/imgs/timbak image 2.png" alt="Image 3">
+                        </div>`;
+                } else if (project === 'project2') {
+                    projectDetails = `
+                        <h6>Data Analytics: UPS and FedEx Shipping Data Analysis using R and Excel</h6>
+                        <p><strong>About the Project:</strong> This project involved analyzing shipping data from UPS and FedEx to identify trends and optimize shipping costs.</p>
+                        <ul>
+                            <li><strong>Identified Key Cost-Saving Opportunities:</strong> Analyzed historical shipping data to identify patterns and areas where costs could be reduced.</li>
+                            <li><strong>Enhanced Data Visualization:</strong> Improved the visualization of data, making it easier for stakeholders to understand and act on insights.</li>
+                            <li><strong>Created an Excel Template:</strong> Developed an Excel template to calculate net charges and markups for each shipping service.</li>
+                        </ul>
+                        <div class="image-slider">
+                            <img src="assets/imgs/R 1.png" alt="Image 1">
+                            <img src="assets/imgs/R 2.png" alt="Image 2">
+                            <img src="assets/imgs/R 3.png" alt="Image 3">
+                        </div>`;
+                } else if (project === 'project3') {
+                    projectDetails = `
+                        <h6>Project Management: 3D Printed Prosthetic Leg</h6>
+                        <p><strong>About the Project:</strong> The 3D Printed Prosthetic Leg project was a strategic initiative focused on developing an affordable and efficient prosthetic solution using 3D printing technology.</p>
+                        <ul>
+                            <li><strong>On-Time Delivery with Enhanced Efficiency:</strong> Led a 5-member team to successfully deliver the prosthetic leg on time, surpassing efficiency targets by 5%.</li>
+                            <li><strong>Significant Cost Reduction:</strong> Minimized overall material costs by 80% through topology optimization.</li>
+                            <li><strong>Comprehensive Project Management:</strong> Followed all critical project management steps including charter development, budgeting, and documentation.</li>
+                        </ul>
+                        <div class="image-slider">
+                            <img src="assets/imgs/ISE 1.png" alt="Image 1">
+                            <img src="assets/imgs/ISE 2.png" alt="Image 2">
+                            <img src="assets/imgs/ISE 3.png" alt="Image 3">
+                        </div>`;
+                } else if (project === 'project4') {
+                    projectDetails = `
+                        <h6>Technical: Underwater Drone for Cargo Transportation</h6>
+                        <p><strong>About the Project:</strong> This project focused on developing an autonomous underwater drone system capable of transporting cargo with 3-5 kg capacity.</p>
+                        <ul>
+                            <li><strong>Designed and Fabricated AUV Bot:</strong> Created an AUV bot to navigate pre-determined underwater routes with 95% accuracy.</li>
+                            <li><strong>Reduced Fabrication Costs by 30%:</strong> Utilized Fusion 360 for 3D modeling.</li>
+                            <li><strong>Achieved 4-5 Feet Submersion Capability:</strong> Met technical requirements for underwater cargo transportation.</li>
+                        </ul>
+                        <div class="image-slider">
+                            <img src="assets/imgs/Under 1.jpg" alt="Image 1">
+                            <img src="assets/imgs/Under 2.jpg" alt="Image 2">
+                            <img src="assets/imgs/Under 3.jpg" alt="Image 3">
+                        </div>`;
+                } else if (project === 'project5') {
+                    projectDetails = `
+                        <h6>Technical: Toothpaste Refiller Mechanism</h6>
+                        <p><strong>About the Project:</strong> The Toothpaste Refiller project was an innovative initiative aimed at addressing the environmental impact caused by disposable toothpaste tubes.</p>
+                        <ul>
+                            <li><strong>Successful CAD Design and Fabrication:</strong> Designed and fabricated a fully functional CAD model.</li>
+                            <li><strong>Patent Application Submitted:</strong> Applied for a patent which is currently under review.</li>
+                            <li><strong>Innovative Product Development:</strong> Employed cutting-edge methodologies in New Product Development.</li>
+                        </ul>
+                        <div class="image-slider">
+                            <img src="assets/imgs/Paste 1.jpg" alt="Image 1">
+                            <img src="assets/imgs/Paste 3.jpg" alt="Image 2">
+                            <img src="assets/imgs/Paste 2.jpg" alt="Image 3">
+                        </div>`;
+                }
+
+                modalBody.innerHTML = projectDetails;
+                modal.classList.add("show");
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove("show");
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>
